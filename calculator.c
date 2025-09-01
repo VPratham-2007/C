@@ -35,13 +35,23 @@ int main()
 
         else if (operation == 'D')
         {
-            a[i + 1] = a[i] / b[i];
+            if (b[i] != 0)
+            {
+                a[i + 1] = a[i] / b[i];
+            }
+            else
+            {
+                printf("Error: Division by zero! Skipping operation.\n");
+                a[i + 1] = a[i];
+            }
         }
-
+        
         else
         {
             a[i + 1] = a[i];
         }
+
+        printf("Result after step %d = %.2f\n", i + 1, a[i + 1]);
     }
 
     printf("The final ans is %.2f\n", a[no]);
